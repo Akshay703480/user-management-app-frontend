@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { UserCircleIcon } from "@heroicons/react/24/outline"; // Correct import for Heroicons v2
+import { UserCircleIcon } from "@heroicons/react/24/outline";
 
 
 function Navbar() {
