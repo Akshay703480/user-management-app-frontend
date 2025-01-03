@@ -7,7 +7,7 @@ This is a simple React application for managing users. It allows you to add new 
 - Add new users.
 - Delete users from the list.
 - Display user details such as name, email, and company.
-- - Search user by name, email, and company.
+-  Search user by name, email, and company.
 
 To run the file:
 ```bash
