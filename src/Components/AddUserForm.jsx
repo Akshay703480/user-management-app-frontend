@@ -14,8 +14,7 @@ function AddUserForm({ onAddUser, setShowModal }) {
     onAddUser(newUserData); 
     setNewUser({ name: "", email: "", company: "" }); 
     alert("User successfully added!"); 
-    setShowModal(false); // Close modal
-  };
+    setShowModal(false);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
