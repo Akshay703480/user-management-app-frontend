@@ -16,10 +16,10 @@ function StartPage() {
                 backgroundImage: "url('https://www.loginradius.com/blog/static/3d1a7f9993b6334444b52ae84a06f852/d3746/user-mngmnt.jpg')",
             }}
         >
-            {/* Black Shade Overlay */}
+   
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-            {/* Content Section with Frosted Glass Effect */}
+   
             <div className="relative flex flex-col items-center text-center bg-white/30 p-8 rounded-lg shadow-lg max-w-md backdrop-blur-md z-10">
                 <h1 className="text-4xl font-bold text-white mb-4">
                     Welcome to the Users App
