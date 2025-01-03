@@ -9,7 +9,7 @@ function UserList() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(""); // State for search input
+  const [searchQuery, setSearchQuery] = useState(""); 
 
   useEffect(() => {
     setLoading(true);
@@ -17,7 +17,7 @@ function UserList() {
       .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
         setUsers(response.data);
-        setFilteredUsers(response.data); // Initially, show all users
+        setFilteredUsers(response.data); 
         setLoading(false);
       })
       .catch((err) => {
@@ -26,11 +26,9 @@ function UserList() {
       });
   }, []);
 
-  // Handle search functionality
+  
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
-
-    // Filter users based on search query
     const filtered = users.filter(
       (user) =>
         user.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
@@ -43,21 +41,20 @@ function UserList() {
 
   const handleAddUser = (newUserData) => {
     setUsers([...users, newUserData]);
-    setFilteredUsers([...filteredUsers, newUserData]); // Add to filtered users as well
+    setFilteredUsers([...filteredUsers, newUserData]);
     setShowModal(false);
   };
 
-  // Handle delete functionality
   const handleDelete = (updatedUsers) => {
     setUsers(updatedUsers);
-    setFilteredUsers(updatedUsers); // Update filtered users after deletion
+    setFilteredUsers(updatedUsers); 
   };
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
       <h1 className="text-3xl font-roboto1 text-gray-900 mb-6">User List</h1>
 
-      {/* Search Bar */}
+   
       <div className="mb-4">
         <input
           type="text"
@@ -67,12 +64,10 @@ function UserList() {
           className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
         />
       </div>
-
-      {/* Loading and Error Messages */}
+ 
       {loading && <div className="text-xl text-blue-500">Loading users...</div>}
       {error && <div className="text-red-600 font-semibold">{error}</div>}
 
-      {/* Add User Button */}
       <div className="mb-4 text-right">
         <button
           onClick={() => setShowModal(true)}
@@ -84,7 +79,6 @@ function UserList() {
         </button>
       </div>
 
-      {/* User List Grid */}
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {filteredUsers.map((user) => (
           <div
@@ -103,7 +97,6 @@ function UserList() {
         ))}
       </div>
 
-      {/* Add User Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <AddUserForm onAddUser={handleAddUser} setShowModal={setShowModal} />
